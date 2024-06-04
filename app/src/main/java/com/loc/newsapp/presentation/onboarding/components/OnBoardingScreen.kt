@@ -2,7 +2,6 @@ package com.loc.newsapp.presentation.onboarding.components
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Arrangement
-
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -13,7 +12,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
-
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.remember
@@ -24,12 +22,16 @@ import androidx.compose.ui.unit.dp
 import com.loc.newsapp.presentation.Dimens.MediumPadding2
 import com.loc.newsapp.presentation.common.NewsButton
 import com.loc.newsapp.presentation.common.NewsTextButton
+import com.loc.newsapp.presentation.onboarding.OnBoardingEvent
 import com.loc.newsapp.presentation.onboarding.pages
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun OnBoardingScreen() {
+fun OnBoardingScreen(
+    onEvent: (OnBoardingEvent) -> Unit
+
+) {
     Column(modifier = Modifier.fillMaxSize()) {
         val pagerState = rememberPagerState(initialPage = 0) {
             pages.size
@@ -82,8 +84,9 @@ fun OnBoardingScreen() {
                     text = buttonsState.value[1],
                     onClick = {
                         scope.launch {
-                            if (pagerState.currentPage == 3){
+                            if (pagerState.currentPage == 2){
                                 //Navigate to the main screen and save a value in datastore preferences
+                                onEvent (OnBoardingEvent.SaveAppEntry)
                             }else{
                                 pagerState.animateScrollToPage(
                                     page = pagerState.currentPage + 1
