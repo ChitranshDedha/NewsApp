@@ -2,6 +2,12 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+      <entry key="ArticleCardPreview">
+        <State />
+      </entry>
+      <entry key="DetailsScreenPreview">
+        <State />
+      </entry>
       <entry key="OnBoardingPagePreview">
         <State>
           <runningDeviceTargetSelectedWithDropDown>
@@ -21,21 +27,11 @@
       <entry key="OnBoardingPageReview (1)">
         <State />
       </entry>
+      <entry key="SearchBarPreview">
+        <State />
+      </entry>
       <entry key="app">
-        <State>
-          <targetSelectedWithDropDown>
-            <Target>
-              <type value="QUICK_BOOT_TARGET" />
-              <deviceKey>
-                <Key>
-                  <type value="VIRTUAL_DEVICE_PATH" />
-                  <value value="$USER_HOME$/.android/avd/Pixel_8_Pro_API_34.avd" />
-                </Key>
-              </deviceKey>
-            </Target>
-          </targetSelectedWithDropDown>
-          <timeTargetWasSelectedWithDropDown value="2024-06-04T22:35:22.737829925Z" />
-        </State>
+        <State />
       </entry>
     </value>
   </component>
